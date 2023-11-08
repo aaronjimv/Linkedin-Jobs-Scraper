@@ -3,6 +3,9 @@ import logging
 from task.get_offers import(
     get_offers
 )
+from task.save_offers import(
+    save_offers
+)
 
 log = logging.getLogger()
 
@@ -12,7 +15,7 @@ SKILL = 'python'
 def main_flow():
     log.info(f"SCRAPPER PROCESS")
     offers = get_offers(SKILL)
-    print(offers)
+    save_offers(offers)
 
 if __name__ == '__main__':
     main_flow()
