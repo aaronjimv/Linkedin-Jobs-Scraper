@@ -1,8 +1,11 @@
+import logging
 import requests
 from bs4 import BeautifulSoup
+from prefect import task
 
 LINKEDIN_URL = 'https://www.linkedin.com/jobs/search/?keywords=#&position=1&pageNum=0'
 
+@task(name='get job offers')
 def get_offers(skill):
     url = requests.get(LINKEDIN_URL.replace('#',skill))
     
@@ -26,12 +29,3 @@ def get_offers(skill):
 		
     else:
         print("error " + str(url.status_code))
-        
-
-if __name__ == '__main__':
-    skill = input('Enter skill to search on Linkedin : ')
-    offers = get_offers(skill)
-    for offer in offers:
-        print("="*100)
-        for key,value in offer.items():
-            print(key,' : ',value)
