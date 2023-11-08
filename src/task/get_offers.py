@@ -10,7 +10,7 @@ def get_offers(skill):
     url = requests.get(LINKEDIN_URL.replace('#',skill))
     
     if(url.status_code == 200):
-        print(f"DATA SCRAPPER...")
+        print(f" -- DATA SCRAPPER -- ")
         html = BeautifulSoup(url.text,'html.parser')
         data_offers = html.find('ul',{'class':'jobs-search__results-list'})
         offers_list = data_offers.find_all('li')
