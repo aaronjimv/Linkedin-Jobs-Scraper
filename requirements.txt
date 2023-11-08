@@ -2,3 +2,4 @@ requests
 bs4
 prefect
 python-decouple
+setuptools
