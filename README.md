@@ -1,4 +1,4 @@
-### Linkedin Scraper
+### Linkedin Jobs Scraper
 ---
 
 This repository allows the extraction of job offers from the Linkedin website.
